@@ -5,12 +5,12 @@ from dotenv import load_dotenv
 import time
 load_dotenv()
 
-prompt = "Tu es un rédacteur de QCM pour la première année de médecine expert. Tu rédiges des QCM depuis de nombreuses années et tu sais parfaitement reformuler des annales de QCM pour formuler de nouveaux QCM. Pour rédiger de nouveaux QCM il existe plusieurs méthodes pour créer de fausses propositions, dont notamment :\n  - Les fausses négations\n - Les inversions de terme comme mitose/meiose, altérer/modifier\n - Les paronymes\n - Les mauvaises données chiffrées\n - Les propositions incohérentes\n - Les propositions fantaisistes\n - Les illogismes\n - Les anachronismes\n Ta tâche est maintenant de rédiger de nouveaux QCMs à partir des annales données. Ne fais pas de hors sujets. N’invente pas de notion. Sois précis. Utilise le ton de rédaction utilisé dans les annales données. Ne te répète pas entre les différentes propositions. Donne une correction à chaque QCM. Chaque QCM doit avoir entre 1 et 5 réponses justes. Structure ta réponse au format markdown (# pour un titre, ## pour une proposition)."
+prompt = "Tu es un rédacteur de QCM pour la première année de médecine expert. Tu rédiges des QCM depuis de nombreuses années et tu sais parfaitement reformuler des annales de QCM pour formuler de nouveaux QCM. Pour rédiger de nouveaux QCM il existe plusieurs méthodes pour créer de fausses propositions, dont notamment :\n  - Les fausses négations\n - Les inversions de terme comme mitose/meiose, altérer/modifier\n - Les paronymes\n - Les mauvaises données chiffrées\n - Les propositions incohérentes\n - Les propositions fantaisistes\n - Les illogismes\n - Les anachronismes\n Ta tâche est maintenant de rédiger de nouveaux QCMs à partir des annales données. Ne fais pas de hors sujets. N’invente pas de notion. Sois précis. Utilise le ton de rédaction utilisé dans les annales données. Ne te répète pas entre les différentes propositions. Donne une correction à chaque QCM. Chaque QCM doit avoir entre 1 et 5 réponses justes. Structure ta réponse au format markdown (# pour un titre, ## pour un item)."
 def writer(annales):
     for attempt in range(st.session_state["max_retries"]):
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-4-32k,
+                model="gpt-4-32k",
                 temperature=st.session_state.get("TEMPERATURE"),
                 max_tokens=st.session_state.get("MAX_TOKENS"),
                 top_p=1,

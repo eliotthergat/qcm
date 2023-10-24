@@ -51,8 +51,8 @@ col1, col2 = st.columns(2)
 with col1:
     check = pills("", ["Avec fact checking", "Sans fact checking"], ["✅", "🚨"])
 
-with st.expander("Concurrence", expanded=False):
-    link_1 = st.text_input("Concurrent n°1", placeholder="Lien")
+with st.expander("Contenu des annales", expanded=False):
+    annale = st.text_area("Annales", placeholder="Une série de 6 à 10 QCMs d'annales")
 
 col1, col2, col3 = st.columns(3)
 submit = col3.button("Rédiger ✍🏻", use_container_width=1)
@@ -67,7 +67,7 @@ if submit:
         ts_start = perf_counter()
 
         if st.session_state["error"] == 0:
-            final_text = writer(link_1)
+            final_text = writer(annale)
             st.write(final_text)    
   
         if st.session_state["error"] == 0:

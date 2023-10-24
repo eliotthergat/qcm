@@ -28,6 +28,7 @@ def sidebar():
         max_tokens = st.slider("Longueur maximale (`max_tokens`):", min_value=1, max_value=8000, value=st.session_state.get("MAX_TOKENS", 4000), step=25, help="Nombre maximum de tokens à utiliser")
         st.session_state["MAX_TOKENS"] = max_tokens
         
+        st.markdown("## (Ne pas toucher)")
         temperature = st.slider("Température (`randomness`):", min_value=0.0, max_value=2.0, value=st.session_state.get("TEMPERATURE", 1.0), step=0.1, help="###")
         st.session_state["TEMPERATURE"] = temperature
 

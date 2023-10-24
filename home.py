@@ -2,8 +2,6 @@ import os
 import openai
 import streamlit as st
 import requests
-from bs4 import BeautifulSoup
-import markdownify
 from time import perf_counter
 from streamlit_pills import pills 
 

@@ -10,15 +10,6 @@ from streamlit_pills import pills
 
 from components.sidebar import sidebar
 from functions.writer import writer
-from functions.markdown_generator import markdown_generator
-from functions.parser import parser
-from functions.concurrent_analyzer import concurrent_analyzer
-from functions.define_client import define_client
-from functions.concurrent_sumerizer import concurrent_sumerizer
-from functions.bolder_keywords import bold_keywords
-from functions.better_titles import better_titles
-from functions.fact_check import fact_check
-from functions.completer import completer
 from PIL import Image
 
 

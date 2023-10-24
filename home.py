@@ -35,7 +35,8 @@ sidebar()
 
 openai.api_key = st.session_state.get("OPENAI_API_KEY")
 
-st.markdown("### Rédigeons de nouveaux QCMs 👀")
+st.markdown("#### v0.1 du prompt")
+st.markdown("##### Modifications attendues : moins de notions non données dans le cours")
 
 with st.expander("Contenu des annales", expanded=False):
     annale = st.text_area("Annales", placeholder="Une série de 6 à 10 QCMs d'annales")

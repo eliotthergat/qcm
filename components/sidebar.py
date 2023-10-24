@@ -11,12 +11,9 @@ def sidebar():
         st.markdown(
                 "## Comment fonctionne Khontenu ?\n"
                 "1. 🔑 Entrez une clé OpenAI \n"
-                "2. 🏴‍☠️ Choisissez les textes à analyser \n"
-                "3. 🏆 Entrez le titre \n"
-                "4. 🗺️ Entrez le plan \n"
-                "5. 🦜 Entrez les mots-clés \n"
-                "6. ✅ Choisissez vos options \n"
-                "7. 🖊️ Lancez la rédaction \n"
+                "2. 🏴‍☠️ Choisissez les annales sourcces \n"
+                "3. 🏆 Sélectionnez la possibilité de faire un fact-check \n"
+                "4. 🖊️ Lancez la rédaction \n"
             )
         api_key_input = st.text_input(
             "OpenAI API Key",
@@ -29,7 +26,7 @@ def sidebar():
         st.session_state["OPENAI_API_KEY"] = api_key_input
         st.markdown("---")
         st.markdown("# Paramètres")
-        max_tokens = st.slider("Longueur maximale (`max_tokens`):", min_value=1, max_value=8000, value=st.session_state.get("MAX_TOKENS", 2048), step=25, help="Nombre maximum de tokens à utiliser")
+        max_tokens = st.slider("Longueur maximale (`max_tokens`):", min_value=1, max_value=8000, value=st.session_state.get("MAX_TOKENS", 4000), step=25, help="Nombre maximum de tokens à utiliser")
         st.session_state["MAX_TOKENS"] = max_tokens
         
         temperature = st.slider("Température (`randomness`):", min_value=0.0, max_value=2.0, value=st.session_state.get("TEMPERATURE", 1.0), step=0.1, help="###")

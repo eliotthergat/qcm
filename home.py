@@ -35,12 +35,7 @@ sidebar()
 
 openai.api_key = st.session_state.get("OPENAI_API_KEY")
 
-st.markdown("### Rédigeons de meilleures pages que les concurrents 👀")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    check = pills("", ["Avec fact checking", "Sans fact checking"], ["✅", "🚨"])
+st.markdown("### Rédigeons de nouveaux QCMs 👀")
 
 with st.expander("Contenu des annales", expanded=False):
     annale = st.text_area("Annales", placeholder="Une série de 6 à 10 QCMs d'annales")
@@ -60,13 +55,6 @@ if submit:
         if st.session_state["error"] == 0:
             final_text = writer(annale)
             st.write(final_text)    
-  
-        if st.session_state["error"] == 0:
-            if check == "Avec fact checking":
-                st.error("Fact checking en cours...")
-                fact = fact_check(final_text)
-                with st.expander("Fact checking", expanded=False):
-                    st.write(fact)
         
         ts_end = perf_counter()
         st.info(f" {round(((ts_end - ts_start)/60), 3)} minutes d'exécution")

@@ -10,7 +10,7 @@ def writer(annales):
     for attempt in range(st.session_state["max_retries"]):
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-4-32k",
+                model="gpt-4",
                 temperature=st.session_state.get("TEMPERATURE"),
                 max_tokens=st.session_state.get("MAX_TOKENS"),
                 top_p=1,

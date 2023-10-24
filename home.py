@@ -67,6 +67,6 @@ if submit:
     col3.download_button(
         label="Télécharger 💾",
         data=final_text,
-        file_name='texte.md',
-        mime='text/markdown',
+        file_name='qcm.txt',
+        mime='text/plain',
     )

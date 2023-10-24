@@ -12,8 +12,7 @@ def sidebar():
                 "## Comment fonctionne Khontenu ?\n"
                 "1. 🔑 Entrez une clé OpenAI \n"
                 "2. 🏴‍☠️ Choisissez les annales sourcces \n"
-                "3. 🏆 Sélectionnez la possibilité de faire un fact-check \n"
-                "4. 🖊️ Lancez la rédaction \n"
+                "3. 🖊️ Lancez la rédaction \n"
             )
         api_key_input = st.text_input(
             "OpenAI API Key",

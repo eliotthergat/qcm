@@ -25,7 +25,7 @@ st.set_page_config(
 
 
 
-st.header("🧠 Khontenu")
+st.header("✅ Khontenu pour les QCMs")
 st.markdown("---")
 
 if "shared" not in st.session_state:

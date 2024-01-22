@@ -23,7 +23,7 @@ st.set_page_config(
 
 
 
-st.header("✅ Khontenu pour les QCMs")
+st.header("✅ Khontenu pour les QCMs | Format sujet/correction liés")
 st.markdown("---")
 
 if "shared" not in st.session_state:
